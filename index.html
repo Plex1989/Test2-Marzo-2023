@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANDARES | Terrenos Col. 21 de Marzo</title>
+    <!-- Scripts y Estilos Externos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+
+    <style>
+        body { font-family: 'Montserrat', sans-serif; scroll-behavior: smooth; position: relative; overflow-x: hidden; background-color: #f8fafc; }
+        
+        /* Paleta Agencia Premium: Verde Bosque y Oro */
+        .bg-bosque { background-color: #0E1D13; }
+        .text-bosque { color: #0E1D13; }
+        .border-bosque { border-color: #0E1D13; }
+        .gold-gradient { background: linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%); }
+        .gold-text { color: #D4AF37; }
+
+        .hero-bg { 
+            background: linear-gradient(to bottom, rgba(14, 29, 19, 0.85), rgba(14, 29, 19, 0.95)), url('https://images.unsplash.com/photo-1511884642898-4c92249e20b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'); 
+            background-size: cover; background-position: center; background-attachment: fixed;
+        }
+
+        #panorama { width: 100%; height: 500px; border-radius: 1.5rem; border: 4px solid #D4AF37; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3); }
+        
+        /* Hotspot Tour 360 */
+        .hotspot-tour {
+            height: 40px;
+            width: 40px;
+            background-color: #D4AF37; 
+            border-radius: 50%;
+            border: 3px solid white;
+            color: #0E1D13;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            animation: pulse-tour 2s infinite;
+        }
+        .hotspot-tour::after {
+            content: "\f061"; /* Flecha derecha de FontAwesome */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+        }
+        @keyframes pulse-tour {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Navegación -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-md h-20 flex items-center">
+        <div class="max-w-7xl w-full mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <img src="logo.png" alt="Andares" class="h-12 w-auto object-contain">
+            </div>
+            <a href="#contacto" class="bg-bosque text-white px-6 py-2 rounded-full font-bold text-sm hover:bg-green-900 transition shadow-lg">Ver Terrenos</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-32 pb-20 px-6 hero-bg min-h-screen flex flex-col items-center justify-center text-center text-white">
+        <div class="max-w-4xl mx-auto">
+            <span class="gold-text uppercase tracking-[0.4em] text-xs font-bold mb-4 block">Ubicación Estratégica en Xalapa</span>
+            <h2 class="text-5xl md:text-7xl font-black mb-4 leading-none tracking-tighter uppercase italic">Col. 21 de Marzo</h2>
+            <p class="text-lg md:text-2xl mb-10 text-gray-300 font-light italic">Tu refugio natural. Asegura tu patrimonio hoy mismo.</p>
+            
+            <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl inline-block mb-10 shadow-2xl">
+                <p class="text-sm uppercase tracking-widest mb-1">Inversión desde</p>
+                <p class="text-5xl font-black gold-text italic">$5,000 MXN <span class="text-xl font-medium text-white">/ mes</span></p>
+            </div>
+
+            <!-- Espacio para tu reel de 47s (Súbelo a YouTube y cambiaremos el ID) -->
+            <div class="relative w-full max-w-3xl mx-auto aspect-video rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10 mb-12 hidden">
+                <iframe class="absolute top-0 left-0 w-full h-full" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contacto" class="gold-gradient text-bosque px-8 py-4 rounded-xl font-black uppercase tracking-widest shadow-xl hover:scale-105 transition">¡Hazlo realidad hoy!</a>
+                <a href="#tour360" class="bg-white/10 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-xl font-bold uppercase tracking-widest hover:bg-white/20 transition">Tour Virtual 360°</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Características (Extraídas de tu imagen) -->
+    <section class="py-16 px-6 max-w-7xl mx-auto -mt-10 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white p-8 rounded-3xl shadow-xl border-t-8 border-bosque text-center hover:-translate-y-2 transition">
+                <i class="fa-solid fa-ruler-combined text-5xl gold-text mb-4"></i>
+                <h3 class="font-black text-2xl text-bosque">105 m²</h3>
+                <p class="text-sm text-gray-500 uppercase font-bold tracking-widest mt-2">Medidas: 7 x 15 m</p>
+            </div>
+            <div class="bg-white p-8 rounded-3xl shadow-xl border-t-8 border-bosque text-center hover:-translate-y-2 transition">
+                <i class="fa-solid fa-file-signature text-5xl gold-text mb-4"></i>
+                <h3 class="font-black text-2xl text-bosque">Legalidad</h3>
+                <p class="text-sm text-gray-500 uppercase font-bold tracking-widest mt-2">Cesión de Derechos</p>
+            </div>
+            <div class="bg-white p-8 rounded-3xl shadow-xl border-t-8 border-bosque text-center hover:-translate-y-2 transition">
+                <i class="fa-solid fa-key text-5xl gold-text mb-4"></i>
+                <h3 class="font-black text-2xl text-bosque">Entrega</h3>
+                <p class="text-sm text-gray-500 uppercase font-bold tracking-widest mt-2">Inmediata</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Tour 360 -->
+    <section id="tour360" class="py-16 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-10">
+            <h2 class="text-4xl font-black uppercase text-bosque mb-2 italic">Tour Virtual del Terreno</h2>
+            <p class="text-gray-500 italic font-bold uppercase tracking-widest text-xs gold-text">Haz clic en la flecha dorada para avanzar</p>
+        </div>
+        <div class="relative">
+            <div id="panorama"></div>
+            <div class="absolute top-6 left-1/2 -translate-x-1/2 bg-black/80 text-white px-5 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest backdrop-blur-md border border-white/30 pointer-events-none z-[10] flex items-center gap-3 md:hidden shadow-xl">
+                <i class="fa-solid fa-mobile-screen-button animate-bounce gold-text"></i>
+                <span>Gira tu celular para ver mejor</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Croquis y Ubicación (Nueva Sección con tu Imagen Cenital y Timelapse) -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Título Principal -->
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-black mb-4 uppercase italic text-bosque leading-tight">Ubicación y <br><span class="gold-text">Conectividad</span></h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Descubre la posición privilegiada de nuestros lotes y su fácil acceso a las principales vías de la ciudad.</p>
+            </div>
+
+            <!-- Croquis Cenital con Neón -->
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+                <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-bosque">
+                    <!-- ¡Aquí va tu nueva imagen! Asegúrate de que se llame así en GitHub -->
+                    <img src="croquis_neon.jpg" alt="Vista Cenital con Croquis Neón" class="w-full h-auto hover:scale-105 transition duration-500">
+                </div>
+                <div>
+                    <h3 class="text-3xl font-black mb-6 uppercase italic text-bosque">Distribución <span class="gold-text">Inteligente</span></h3>
+                    <p class="text-gray-600 mb-8 text-lg">Visualiza la ubicación exacta de los lotes y sus dimensiones. Un diseño pensado para aprovechar al máximo el entorno natural.</p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3 font-bold text-gray-700"><i class="fa-solid fa-check gold-text"></i> Lotes regulares de 7x15m</li>
+                        <li class="flex items-center gap-3 font-bold text-gray-700"><i class="fa-solid fa-check gold-text"></i> Orientación optimizada</li>
+                        <li class="flex items-center gap-3 font-bold text-gray-700"><i class="fa-solid fa-check gold-text"></i> Calles internas trazadas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Timelapse de Conectividad -->
+            <div class="bg-gray-100 p-8 md:p-12 rounded-[3rem]">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 md:order-1">
+                        <h3 class="text-3xl font-black mb-6 uppercase italic text-bosque">Conectividad en <span class="gold-text">Tiempo Real</span></h3>
+                        <p class="text-gray-600 mb-6 text-lg">Mira este timelapse y comprueba lo rápido que es llegar desde los terrenos hasta el Bulevar Xalapa-Banderilla.</p>
+                        <div class="flex gap-4 items-center mb-4">
+                            <i class="fa-solid fa-car-side text-4xl gold-text"></i>
+                            <div>
+                                <p class="font-bold text-bosque text-xl">Acceso Rápido</p>
+                                <p class="text-sm text-gray-500">Sin complicaciones de tráfico</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-center">
+                            <i class="fa-solid fa-route text-4xl gold-text"></i>
+                            <div>
+                                <p class="font-bold text-bosque text-xl">Vías Principales</p>
+                                <p class="text-sm text-gray-500">Conexión directa a la ciudad</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-1 md:order-2 rounded-2xl overflow-hidden shadow-xl border-4 border-bosque aspect-video relative">
+                        <!-- Reemplaza 'TU_ID_DE_YOUTUBE_AQUI' con el ID de tu video timelapse -->
+                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/TU_ID_DE_YOUTUBE_AQUI?rel=0" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto con Asesores -->
+    <section id="contacto" class="py-20 bg-gray-100 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <span class="gold-text uppercase tracking-widest text-sm font-bold block mb-2">Da el primer paso</span>
+            <h2 class="text-4xl font-black uppercase mb-12 italic text-bosque">Agenda tu Visita</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Asesor 1 -->
+                <div class="bg-white p-8 rounded-3xl shadow-lg border-b-8 border-bosque">
+                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fa-solid fa-user-tie text-2xl text-bosque"></i>
+                    </div>
+                    <h3 class="font-black text-xl mb-4 uppercase italic">Asesor Comercial</h3>
+                    <a href="https://wa.me/5212284237348?text=Hola,%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20los%20Terrenos%20de%20$5,000%20en%20la%2021%20de%20Marzo" class="block w-full bg-bosque text-white py-3 rounded-xl font-bold hover:bg-green-900 transition uppercase text-sm shadow-md">Contactar Asesor</a>
+                </div>
+
+                <!-- Asesor 2 -->
+                <div class="bg-white p-8 rounded-3xl shadow-lg border-b-8 border-bosque">
+                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fa-solid fa-user-tie text-2xl text-bosque"></i>
+                    </div>
+                    <h3 class="font-black text-xl mb-4 uppercase italic">Asesor Comercial</h3>
+                    <a href="https://wa.me/5212731325005?text=Hola,%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20los%20Terrenos%20de%20$5,000%20en%20la%2021%20de%20Marzo" class="block w-full bg-bosque text-white py-3 rounded-xl font-bold hover:bg-green-900 transition uppercase text-sm shadow-md">Contactar Asesor</a>
+                </div>
+
+                <!-- Asesor 3 -->
+                <div class="bg-white p-8 rounded-3xl shadow-lg border-b-8 border-bosque">
+                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fa-solid fa-user-tie text-2xl text-bosque"></i>
+                    </div>
+                    <h3 class="font-black text-xl mb-4 uppercase italic">Asesor Comercial</h3>
+                    <a href="https://wa.me/5212283146884?text=Hola,%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20los%20Terrenos%20de%20$5,000%20en%20la%2021%20de%20Marzo" class="block w-full bg-bosque text-white py-3 rounded-xl font-bold hover:bg-green-900 transition uppercase text-sm shadow-md">Contactar Asesor</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-bosque text-white py-12 text-center">
+        <div class="flex justify-center items-center gap-3 mb-4">
+            <img src="logo.png" alt="Andares" class="h-10 w-auto opacity-80 filter grayscale brightness-200">
+        </div>
+        <p class="text-gray-400 text-[10px] uppercase tracking-widest">© 2026 Todos los derechos reservados | Andares Corporativo Inmobiliario.</p>
+    </footer>
+
+    <!-- Botón Flotante WhatsApp -->
+    <a href="https://wa.me/5212283146884?text=Hola,%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20los%20Terrenos%20de%20$5,000%20en%20la%2021%20de%20Marzo" class="fixed bottom-8 right-8 bg-[#25d366] text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl z-[100] hover:scale-110 transition">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Lógica de Panorama 360 (TOUR VIRTUAL) -->
+    <script>
+        pannellum.viewer('panorama', {
+            "default": {
+                "firstScene": "escena1",
+                "author": "Andares Corporativo",
+                "sceneFadeDuration": 1000,
+                "autoLoad": true
+            },
+            "scenes": {
+                "escena1": {
+                    "title": "Entrada al Lote",
+                    "type": "equirectangular",
+                    "panorama": "foto360_1.jpg", 
+                    "hotSpots": [
+                        {
+                            "pitch": 0.0,  
+                            "yaw": 10.0, /* ⬅️ Ajusta este valor para mover la flecha en la escena 1 */
+                            "type": "scene",
+                            "text": "Avanzar",
+                            "sceneId": "escena2",
+                            "cssClass": "hotspot-tour"
+                        }
+                    ]
+                },
+                "escena2": {
+                    "title": "Interior del Terreno",
+                    "type": "equirectangular",
+                    "panorama": "foto360_2.jpg",
+                    "hotSpots": [
+                        {
+                            "pitch": 0.0, 
+                            "yaw": 180.0,  /* ⬅️ Ajusta este valor para mirar hacia atrás a la escena 1 */
+                            "type": "scene",
+                            "text": "Regresar",
+                            "sceneId": "escena1",
+                            "cssClass": "hotspot-tour"
+                        }
+                    ]
+                }
+            }
+        });
+    </script>
+</body>
+</html>
